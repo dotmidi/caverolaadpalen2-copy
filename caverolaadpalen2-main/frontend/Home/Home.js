@@ -268,33 +268,6 @@ function sendemail(){
   const dropdown = document.getElementById("dropdown");
 
   // send email depending on the option
-  if(document.getElementById('RadioKlaar').checked){
-  Email.send (
-    {
-    Host : "smtp.elasticemail.com",
-    port:   2525,
-    Username : "",
-    Password : "",
-    To : email.value,
-    From : 'caverolaadpalengroep4@outlook.com',
-    Subject : "Cavere Laadpalen",
-    Body : "Beste " + emailnaam.value + ", <br> <br> We zullen je zo snel mogelijk een bericht sturen als je auto klaar is met laden. <br> <br> Met vriendelijke groet, <br> <br> Cavero Laadpalen"
-  }
-)/*.then( message => alert("Email auto vol!"));*/
-}
-else if(document.getElementById('RadioVrij').checked){
-  Email.send (
-    {
-    Host : "smtp.elasticemail.com",
-    port:   2525,
-    Username : "mikkodepoepslaaf@outlook.com",
-    Password : "5064358FF0B85BF413F26CE147A363EF0EFD",
-    To : email.value,
-    From : 'caverolaadpalengroep4@outlook.com',
-    Subject : "Cavero Laadpalen",
-    Body : "Beste " + emailnaam.value + ", <br> <br> We zullen je een email sturen als er een laadpaal vrij komt.<br> Let op! Er kan een wachtrij zijn. <br> <br> Met vriendelijke groet, <br> <br> Cavero Laadpalen"
-  })/*.then( message => alert("Email plekje vrij!"));*/
-}
-}
+  // REMOVED BECAUSE OF SMTP DETAILS
 
 
