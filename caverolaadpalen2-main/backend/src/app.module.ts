@@ -9,7 +9,7 @@ import { AdminModule } from './admin/admin.module';
 
 // Hier worden alle dependecies geinject. Veel nestjs magie wordt hier uitgevoerd. Dat geld voor alle module.ts files.
 @Module({
-  imports: [ChargerModule, MailModule, AdminModule, MongooseModule.forRoot('mongodb+srv://caverolaadpalen:admin123@caverolaadpalen.hkeshf7.mongodb.net/?retryWrites=true&w=majority')],
+  imports: [ChargerModule, MailModule, AdminModule, MongooseModule.forRoot('#')
   controllers: [AppController],
   providers: [AppService],
 })
