@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../Assets/bolt.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>De Loods - Admin</title>
+    <link rel="stylesheet" href="Admin.css">
+  </head>
+  <!--Admin page Functions: 
+    1. Manually change Charger status
+    2. View Charger info:
+        -Time spent/started charging?
+        -Card number of charging
+        -name of charging
+        -status of charger 
+    3. Manually send reminder mail. -->
+  <body>
+    <div class="ChargeSelector">
+        <!--de src van dit moet geijk zijn aan de status van de paal in de database-->
+        <img id="Reg1" src="../Assets/Wait.png" alt="Pole 1" status="Wait" onclick="setChg('1')">
+        <img id="Reg2" src="../Assets/Free.png" alt="pole 2" status="Free"onclick="setChg('2')">
+        <img id="Reg3" src="../Assets/Free.png" alt="Pole 3" status="Free"onclick="setChg('3')">
+        <img id="Reg4" src="../Assets/Charge.png" alt="Pole 4" status="Charge"onclick="setChg('4')">
+        <img id="Fst1" src="../Assets/FastCharge.png" status="Charge"onclick="setChg('5')">
+        <img id="Fst2" src="../Assets/FastCharge.png" status="Wait"onclick="setChg('6')">
+    </div>
+    <div class="InfoField">
+        <div class="charger"id="1">
+            <div class="about" >
+                <h3>Paal 1</h3>
+                <img id="status1" src="../Assets/Wait.png">
+                <p></p>
+            </div>
+            <div class="StatBtn">
+                <img src="../Assets/Charge.png" onclick="ChangeStatus(2)">
+                <br>
+                <img src="../Assets/wait.png"  onclick="ChangeStatus(3)">
+                <br>
+                <img src="../Assets/Free.png"  onclick="ChangeStatus(1)">
+            </div>
+            <div class="Remind">
+                <img src="../Assets/mail.png" onclick="sendemail(8100969)">
+            </div>
+        </div>
+        <div class="charger"id="2">
+            <div class="about" >
+                <h3>Paal 2</h3>
+                <img id="status2"src="../Assets/Wait.png">
+                <p></p>
+            </div>
+            <div class="StatBtn">
+                <img src="../Assets/Charge.png"onclick="ChangeStatus(2)">
+                <br>
+                <img src="../Assets/wait.png" onclick="ChangeStatus(3)">
+                <br>
+                <img src="../Assets/Free.png" onclick="ChangeStatus(1)">
+            </div>
+            <div class="Remind">
+                <img src="../Assets/mail.png" onclick="sendemail(8100945)">
+            </div>
+        </div>
+        <div class="charger"id="3">
+            <div class="about" >
+                <h3>Paal 3</h3>
+                <img id="status3"src="../Assets/Wait.png">
+                <p></p>
+            </div>
+            <div class="StatBtn">
+                <img src="../Assets/Charge.png" onclick="ChangeStatus(2)">
+                <br>
+                <img src="../Assets/wait.png" onclick="ChangeStatus(3)">
+                <br>
+                <img src="../Assets/Free.png" onclick="ChangeStatus(1)">
+            </div>
+            <div class="Remind">
+                <img src="../Assets/mail.png" onclick="sendemail(9100432)">
+            </div>
+        </div>
+
+        <div class="charger"id="4">
+            <div class="about" >
+                <h3>Paal 4</h3>
+                <img id="status4"src="../Assets/Wait.png">
+                <p></p>
+            </div>
+            <div class="StatBtn">
+                <img src="../Assets/Charge.png" onclick="ChangeStatus(2)">
+                <br>
+                <img src="../Assets/wait.png" onclick="ChangeStatus(3)">
+                <br>
+                <img src="../Assets/Free.png" onclick="ChangeStatus(1)">
+            </div>
+            <div class="Remind">
+                <img src="../Assets/mail.png" onclick="sendemail(8100977)">
+            </div>
+        </div>
+
+        <div class="charger"id="5">
+            <div class="about" >
+                <h3>Paal 5</h3>
+                <img id="statusfst1"src="../Assets/Wait.png">
+                <p></p>
+            </div>
+            <div class="StatBtn">
+                <img src="../Assets/FastCharge.png" onclick="ChangeStatus(2)">
+                <br>
+                <img src="../Assets/FastWait.png" onclick="ChangeStatus(3)">
+                <br>
+                <img src="../Assets/FastFree.png" onclick="ChangeStatus(1)"> 
+            </div>
+            <div class="Remind">
+                <img src="../Assets/mail.png" onclick="sendemail(7200930)">
+            </div>
+        </div>
+        <div class="charger"id="6">
+            <div class="about" >
+                <h3>Paal 6</h3>
+                <img id="statusfst2"src="../Assets/Wait.png">
+                <p></p>
+            </div>
+            <div class="StatBtn">
+                <img src="../Assets/FastCharge.png" onclick="ChangeStatus(2)">
+                <br>
+                <img src="../Assets/FastWait.png" onclick="ChangeStatus(3)">
+                <br>
+                <img src="../Assets/FastFree.png" onclick="ChangeStatus(1)">
+            </div>
+            <div class="Remind">
+                <img src="../Assets/mail.png" onclick="sendemail(7200916)">
+            </div>
+        </div>
+    </div>
+    <section id="adminPanel">
+        <button id="home" onclick="window.location.href='../Home/Home.html'">Home</button>
+      </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="Admin.js"></script>
+    
+  </body>
+</html>

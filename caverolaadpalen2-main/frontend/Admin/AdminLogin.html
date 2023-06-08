@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../Assets/bolt.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cavero</title>
+    <link rel="stylesheet" href="Admin.css">
+  </head>
+  <body>
+    <section id="authentication">
+      <button id="home" onclick="window.location.href='../Home/Home.html'">Home</button>
+      <div class="authentication">
+        <img src="../Assets/deloods.png" alt="bolt"/>
+        <form>
+          <input type="text" id="username" placeholder="Username"/>
+          <input type="password" id="password" placeholder="Password"/>
+          <input id="Login" type="button" value="Login" onclick="login()"/>
+        </form>
+      </div>
+    </section>
+
+    
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="AdminLogin.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+GET http://localhost:3000/mail
+
+####
+
+GET http://localhost:3000/mail/wachtrij
+
+######
+
+
+GET http://localhost:3000/mail/Email
+
+####
+
+GET http://localhost:3000/charger

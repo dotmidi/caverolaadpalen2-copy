@@ -1,0 +1,15 @@
+POST  http://localhost:3000/charger
+Content-Type: application/json
+
+{
+    "id" : 7200916,
+    "type" : 2
+}
+
+###
+
+GET http://localhost:3000/admin
+
+###
+
+GET http://localhost:3000/charger

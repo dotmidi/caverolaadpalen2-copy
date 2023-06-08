@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Opladen - De Loods </title>
+    <link rel="stylesheet" href="Home.css">
+    <link rel="icon" href="../Assets/bolt.png">
+</head>
+
+<body>
+
+  <div class="content">
+
+
+    <div class="RCHG1"> <!-- Contains the four regular chargers-->
+      <div class="open-button">
+        <img id="Reg1" class="Reg1"src="../Assets/loading.png" alt="Pole 1" onclick="DoCheckboxCheck('rc1')" status="Wait">
+        <img id="Reg2" class="Reg2"src="../Assets/loading.png" alt="pole 2" onclick="DoCheckboxCheck('rc2')" status="Free">
+        <img id="Reg3" class="Reg3"src="../Assets/loading.png" alt="Pole 3" onclick="DoCheckboxCheck('rc3')" status="Free">
+        <img id="Reg4" class="Reg4"src="../Assets/loading.png" alt="Pole 4" onclick="DoCheckboxCheck('rc4')"status="Charge">
+      </div> 
+    </div>  
+
+    <div class="FCHG1"> <!--Contains the two fast chargers-->
+      <div class="open-button">
+        <img id="Fst1" class="fst1" src="../Assets/loading.png" onclick="DoCheckboxCheck('fc1')"status="Charge">
+        <img id="Fst2" class="fst2" src="../Assets/loading.png" onclick="DoCheckboxCheck('fc2')"status="Wait">
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="legenda"> <!--Contains the legenda seen in the brown block-->
+    <h3>Legenda</h3>
+    <div class="lgTxt">
+      <div class="LegImg">
+        <img src="../Assets/Wait.png" alt="Wait" > <label>Wachten op ontkoppeling</label>
+      </div>
+      <div class="LegImg">
+        <img src="../Assets/Free.png" alt="Free"> <label>Vrij</label> <br>
+      </div>
+      <div class="LegImg">
+        <img src="../Assets/Charge.png" alt="Charge"> <label>Aan het laden</label>
+      </div>
+      <div class="LegImg">
+        <img src="../Assets/FastCharge.png" alt="FastCharge"> <label>Snellader</label> <br>
+      </div>
+    </div>
+    </p>
+    <img class="legenda_images">
+  </div>
+
+  <!-- Confirmation scherm -->
+  <div class = "confirmation" id = "succes"> 
+    <img src = "../Assets/tick.png"> 
+    <h2> Gelukt! </h2>
+    <p id="confirmationtekst"> </p>
+    <h3 id="confirmwachtrijtekst"> </h3>
+    <h2 id="demo"> </h2>
+    <button onclick="window.location.href='Home.html'" > OK </button>
+  </div>
+
+
+
+  </div>
+    <div class = "header">
+    <input type="checkbox" id="toggle">
+  </div>
+
+   <!-- Navigatie balk -->
+  <nav>
+    <img src="../Assets/deloods.png" title="Cavero Logo" alt="Cavero Logo" class="logo" />
+
+    <label class="navbar-toggler" for="toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </label>
+    
+      <ul class = "nav-list"> 
+          <!--<li class="nav-item" > <a href="#"> Feedback </a> </li>-->
+          <li class="nav-item" onclick="Open('popup-1','active')"> <a href="#"> Hoe Werkt Het? </a> </li> <!-- Maak een kleine tutorial -->
+          <li class="nav-item"> <a href="https://dekennisloods.nl/contact/" target="_blank" rel="noopener noreferrer"> Contact </a> </li>
+          <li class="nav-item"> <a href="../Admin/AdminLogin.html"> Admin </a> </li>
+      </ul>
+
+  </nav>
+  <div class="tutorial"> <!--contains the entirety of the tutorial-->
+    <div class="tutorial" id="popup-1"> 
+      <div class="overlay"> </div>
+      <div class="content"> 
+        <img src="../Assets/deloods.png" title="Cavero Logo" alt="Cavero Logo" class="logo"/>
+        <hr>
+        <div class="close-btn" onclick="Close('popup-1','active')">&times;</div>
+        <p> Vul je naam en E-mail in</p>
+        <img src="../Assets/NameMail.png" style="height: 60%;">
+
+        <ul class="pagination">
+          <li> <a href="#" class="prev"> Previous </a></li>
+          <li class="page active"> <a href="#"> 1 </a></li>
+          <li class="page "> <a href="#" onclick=" Open('popup-2','active');Close('popup-1','active')"> 2 </a></li>
+          <li class="page"> <a href="#" onclick="Close('popup-1','active');Open('popup-3','active')"> 3 </a></li>
+          <li class="page "> <a href="#"  onclick="Close('popup-1','active');Open('popup-4','active')"> 4 </a></li>  
+          <li> <a href="#" class="next" onclick="Swap('popup-2','active','popup-1','active')"> Next > </a></li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="tutorial" id="popup-2"> 
+      
+      <div class="overlay"> </div>
+      <div class="content"> 
+        <img src="../Assets/deloods.png" title="Cavero Logo" alt="Cavero Logo" class="logo"/>
+        <hr>
+        
+        <div class="close-btn" onclick=" Close('popup-2','active')">&times;</div>
+        <p> Kies wanneer je een e-mail wilt ontvangen </p>
+        <img src="../Assets/NameMail.png" style="height: 60%;">
+
+        <ul class="pagination">
+          <li> <a href="#" class="prev" onclick="Swap('popup-1','active','popup-2','active')"> < Previous </a></li>
+          <li class="page active"> <a href="#" onclick="Open('popup-1','active');Close('popup-2','active')"> 1 </a></li>
+          <li class="page "> <a href="#" > 2 </a></li>
+          <li class="page"> <a href="#"onclick="Open('popup-3','active');Close('popup-2','active')"> 3 </a></li>
+          <li class="page"> <a href="#"onclick="Open('popup-4','active');Close('popup-2','active')"> 4 </a></li>  
+          <li> <a href="#" class="next" onclick="Swap('popup-3','active','popup-2','active')"> Next > </a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tutorial" id="popup-3"> 
+      
+      <div class="overlay"> </div>
+      <div class="content"> 
+        <img src="../Assets/deloods.png" title="Cavero Logo" alt="Cavero Logo" class="logo"/>
+        <hr>
+        
+        <div class="close-btn" onclick=" Close('popup-3','active')">&times;</div>
+        <p> Selecteer de paal waar uw auto staat </p> 
+        <p> (Dit hoeft niet als u wacht op een vrije plek)</p>
+        <img src="../Assets/Select.gif" style="height: 60%;">
+
+        <ul class="pagination">
+          <li> <a href="#" class="prev" onclick="Swap('popup-2','active','popup-3','active')"> < Previous </a></li>
+          <li class="page active"> <a href="#" onclick="Open('popup-1','active');Close('popup-3','active')"> 1 </a></li>
+          <li class="page "> <a href="#"onclick="Open('popup-2','active');Close('popup-3','active')"> 2 </a></li>
+          <li class="page"> <a href="#"> 3 </a></li>
+          <li class="page"> <a href="#"onclick="Open('popup-4','active');Close('popup-3','active')"> 4 </a></li>  
+          <li> <a href="#" class="next" onclick="Swap('popup-4','active','popup-3','active')"> Next > </a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tutorial" id="popup-4"> 
+      
+      <div class="overlay"> </div>
+      <div class="content"> 
+        <img src="../Assets/deloods.png" title="Cavero Logo" alt="Cavero Logo" class="logo"/>
+        <hr>
+        
+        <div class="close-btn" onclick=" Close('popup-4','active')">&times;</div>
+        <p> Druk op Submit </p>
+        <img src="../Assets/Submit.PNG" style="margin: auto; top:20%; position: relative;">
+
+        <ul class="pagination">
+          <li> <a href="#" class="prev" onclick="Swap('popup-3','active','popup-4','active')"> < Previous </a></li>
+          <li class="page active"> <a href="#" onclick="Open('popup-1','active');Close('popup-4','active')"> 1 </a></li>
+          <li class="page "> <a href="#"onclick="Open('popup-2','active');Close('popup-4','active')"> 2 </a></li>
+          <li class="page"> <a href="#"onclick="Open('popup-3','active');Close('popup-4','active')"> 3 </a></li>
+          <li class="page"> <a href="#"> 4 </a></li>  
+          <li> <a href="#" class="next" onclick="Close('popup-4','active')"> Finish  </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="RegField"> <!--Contains the elements involved in the registering process. Like the forms, submit buttons, mode selectors.-->
+    <div class="SelectBloc" id="SelectBloc"> <!--Checkboxes that determine what charger has been selected-->
+      
+      <label class="Check">
+        Snellader 1
+        <input type="checkbox" id="fc1" value="Snellader 1" onclick="JustUndoCheck('fc1')"required>
+        <span class="AltCheck" style="left: -23px;"> </span>
+      </label>
+      
+      <label class="Check">
+        Lader 1
+        <input type="checkbox" id="rc1" value="Lader 1" onclick="JustUndoCheck('rc1')"required>
+        <span class="AltCheck"style=" left: 86px;"> </span>
+      </label>
+      
+      <label class="Check">
+        Lader 2
+        <input type="checkbox" id="rc2" value="Lader 2"onclick="JustUndoCheck('rc2')"required>
+        <span class="AltCheck"style="left: 170px;"> </span>
+      </label>
+
+      <br><br><br>
+      
+      <label class="Check">
+        Snellader 2
+        <input type="checkbox" id="fc2" value="Snellader 2"onclick="JustUndoCheck('fc2')"required>
+        <span class="AltCheck"style="top: 55px;left: -23px;"> </span>
+      </label>
+      
+      <label class="Check">
+        Lader 3
+        <input type="checkbox" id="rc3" value="Lader 3"onclick="JustUndoCheck('rc3')" required>
+        <span class="AltCheck"style="top: 55px; left: 86px;"> </span>
+      </label>
+       
+      <label class="Check">
+        Lader 4
+        <input type="checkbox" id="rc4" value="Lader 4"onclick="JustUndoCheck('rc4')"required>
+        <span class="AltCheck" style="top:55px ;left: 170px;"> </span>
+      </label>
+    </div>
+  <!--Register moet HELEMAAL ONDERAAN, Het absorbeert alles wat eronder zit-->
+    <div class="Register"> <!--The two input fields-->
+      <h3 class="RegHD">Registreer voor E-Mail notificatie</h3>
+
+        <form>
+          <div class = "signup"> 
+            <input id = "gebrnaam" type = "text" required>
+            <span></span>
+            <label> Naam</label>
+          </div>
+          <div class = "signup"> 
+            <input id = "email" type = "text" required>
+            
+            <span > </span>
+            <label> Email </label>
+            
+          </div>
+          <div class="errors">
+            <p id="duplex">Email Bestaat al</p>
+            <p id="spelling">Niet alle velden zijn correct ingevoerd, check uw e-mail en naam en probeer het nog een keer</p>
+            <p id="empty">Er zijn geen palen bezig met laden</p>
+            <p id="free">Er zijn nog vrije plekken</p>
+          </div>
+
+          <div class="dropdown">
+            <input id="RadioKlaar" class= "mode" type="radio" checked="true" onclick="DoRadioCheck('RadioVrij')">
+            <label class="mode">Als mijn auto klaar is met laden</label>
+            <br>
+            <br>
+            <input class = "mode "type="radio" id="RadioVrij" onclick="DoRadioCheck('RadioKlaar')">
+            <label class="mode"> Als er een plek vrijkomt</label>
+          </div>
+          <!--Submit button-->
+          <input class= "signconfirm" type = "button" value = "Submit" onclick="mailcheck()">
+        </form>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="Home.js"></script>
+</body>
+</html>
